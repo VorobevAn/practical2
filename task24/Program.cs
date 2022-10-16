@@ -6,26 +6,25 @@
 
 Console.Write("Задайте длину массива: ");
 int saiz = int.Parse(Console.ReadLine()!);
+int[] array = new int[saiz];
 
-
-int[] array = RandomArrey(saiz);
+RandomArrey(saiz);
 EvenNumbers(array);
 
-int[] RandomArrey(int saiz)
+void RandomArrey(int arrey)
 {
-    int[] array = new int[saiz];
-    for (int i = 0; i < saiz; i++)
+    
+    for (int i = 0; i <array.Length; i++)
     {
         array[i] = new Random().Next(100, 999);
         Console.Write($"{array[i]} ");
     }
-    return array;
-}
-int EvenNumbers(int[] mas)
+  }
+void EvenNumbers(int[] array)
 {
-    int caunt = 0;
+int caunt = 0;
 
-    foreach (int el in mas)
+    foreach (int el in array)
     {
         if (el % 2 == 0)
         {
@@ -34,5 +33,41 @@ int EvenNumbers(int[] mas)
     }
     Console.WriteLine($"Количество чётных чисел:{caunt}");
 
-    return caunt;
 }
+
+
+
+
+
+
+
+
+
+// int[] array = RandomArrey(saiz);
+// EvenNumbers(array);
+
+// int[] RandomArrey(int saiz)
+// {
+//     int[] array = new int[saiz];
+//     for (int i = 0; i < saiz; i++)
+//     {
+//         array[i] = new Random().Next(100, 999);
+//         Console.Write($"{array[i]} ");
+//     }
+//     return array;
+// }
+// int EvenNumbers(int[] mas)
+// {
+//     int caunt = 0;
+
+//     foreach (int el in mas)
+//     {
+//         if (el % 2 == 0)
+//         {
+//             caunt += 1;
+//         }
+//     }
+//     Console.WriteLine($"Количество чётных чисел:{caunt}");
+
+//     return caunt;
+// }

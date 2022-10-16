@@ -6,24 +6,21 @@
 
 Console.Write("Задайте длину массива: ");
 int saiz = int.Parse(Console.ReadLine()!);
-int[] arrey = new int[saiz];
-
-SumArrey(arrey);
-EvenNumbers(arrey);
 
 
+int[] array = RandomArrey(saiz);
+EvenNumbers(array);
 
-
-int[] SumArrey(int[] mas)
+int[] RandomArrey(int saiz)
 {
+    int[] array = new int[saiz];
     for (int i = 0; i < saiz; i++)
     {
-        mas[i] = new Random().Next(100, 999);
-        Console.Write($"{mas[i]} ");
+        array[i] = new Random().Next(100, 999);
+        Console.Write($"{array[i]} ");
     }
-    return mas;
+    return array;
 }
-
 int EvenNumbers(int[] mas)
 {
     int caunt = 0;

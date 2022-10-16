@@ -7,33 +7,31 @@
 Console.Clear();
 Console.Write("Задайте длину массива: ");
 int saiz = int.Parse(Console.ReadLine()!);
-int[] arrey = new int[saiz];
 
-NewArrew(arrey);
-SumNambers(arrey);
 
-int[] NewArrew(int[] mas)
+int[] array = NewArrey(saiz);
+int amount = AmountNambers();
+Console.WriteLine($"сумма нечётных элементов:{amount}");
+
+int[] NewArrey(int saiz)
 {
+    int[] array = new int[saiz];
     for (int i = 0; i < saiz; i++)
     {
-        mas[i] = new Random().Next(-100, 100);
-        Console.Write($"{mas[i]} ");
+        array[i] = new Random().Next(-100, 100);
+        Console.Write($"{array[i]} ");
     }
-    return mas;
+    return array;
 }
-
-
-int[] SumNambers(int[] mas)
+int AmountNambers()
 {
-    int sum = 0;
+    int amount = 0;
     for (int i = 0; i < saiz; i++)
     {
         if (i % 2 != 0)
         {
-            sum += arrey[i];
+            amount += array[i];
         }
     }
-    Console.WriteLine($"сумма нечётных элементов:{sum}");
-
-    return mas;
+    return amount;
 }
